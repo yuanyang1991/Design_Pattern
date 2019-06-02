@@ -15,7 +15,7 @@ public class NoQuarterState implements State {
     @Override
     public void insertQuarter() {
         System.out.println("you insert a quarter");
-        machine.setState(new HasQuarterState(machine));
+        machine.setState(machine.getHasQuarterState());
     }
 
     @Override

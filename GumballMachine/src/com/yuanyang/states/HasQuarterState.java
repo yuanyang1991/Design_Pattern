@@ -22,7 +22,7 @@ public class HasQuarterState implements State {
     @Override
     public void ejectQuarter() {
         System.out.println("eject quarter");
-        machine.setState(new NoQuarterState(machine));
+        machine.setState(machine.getNoQuarterState());
     }
 
     @Override
@@ -30,9 +30,9 @@ public class HasQuarterState implements State {
         System.out.println("you have turn crank");
         if (isWinner()) {
             System.out.println("you are winner");
-            machine.setState(new WinnerState(machine));
+            machine.setState(machine.getWinnerState());
         }else {
-            machine.setState(new SoldState(machine));
+            machine.setState(machine.getSoldState());
         }
         machine.dispense();
     }

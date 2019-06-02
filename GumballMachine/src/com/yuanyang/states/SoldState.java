@@ -31,10 +31,9 @@ public class SoldState implements State {
         System.out.println("dispose gumball");
         int count = machine.decreaseAndGet();
         if (count == 0){
-            machine.setState(new SoldOutState(machine));
+            machine.setState(machine.getSoldOutState());
         }else {
-            machine.setState(new NoQuarterState(machine));
+            machine.setState(machine.getNoQuarterState());
         }
-
     }
 }

@@ -30,9 +30,9 @@ public class WinnerState implements State {
     public void dispense() {
         int current = machine.release2BallAndGet();
         if (current == 0) {
-            machine.setState(new SoldOutState(machine));
+            machine.setState(machine.getSoldOutState());
         }else {
-            machine.setState(new NoQuarterState(machine));
+            machine.setState(machine.getNoQuarterState());
         }
     }
 }
